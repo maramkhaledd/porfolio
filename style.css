@@ -1,0 +1,426 @@
+/* ===== COLORS (change them here if you want) =====
+   Obsidian:          #040B27  (main background)
+   Midnight Blue:     #121F50  (section backgrounds)
+   Dark Slate Blue:   #2A3B80  (borders and the grey button)
+   Iris:              #4255B2  (second gradient color)
+   Medium Slate Blue: #6274E0  (main accent color)
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #040B27;
+    /* soft purple glow in the top-left corner, like the design */
+    background-image: radial-gradient(circle at 10% 0%, #2A3B80 0%, #040B27 50%);
+    background-repeat: no-repeat;
+    color: #ffffff;
+    font-family: "Poppins", Arial, sans-serif;
+    line-height: 1.6;
+}
+
+h1 {
+    line-height: 1.2;
+}
+
+button {
+    cursor: pointer;
+    font-family: inherit;
+}
+
+
+/* ===== NAVIGATION ===== */
+
+#nav {
+    padding: 25px 8%;
+}
+
+#nav nav,
+#nav ul {
+    display: flex;
+    align-items: center;
+    gap: 45px;
+}
+
+#nav nav {
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#nav ul {
+    list-style: none;
+}
+
+#nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+#nav a:hover {
+    color: #6274E0;
+}
+
+#nav img {
+    width: 45px;
+    height: 45px;
+}
+
+#nav button {
+    padding: 8px 20px;
+    border: 1px solid #2A3B80;
+    border-radius: 25px;
+    background: transparent;
+    color: #ffffff;
+    transition: 0.3s;
+}
+
+#nav button:hover {
+    background: #6274E0;
+    border-color: #6274E0;
+}
+
+
+/* ===== SIDE BAR (the rounded bar on the left) ===== */
+
+#sidebar {
+    position: fixed;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 50;
+
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    padding: 28px 14px;
+
+    background: rgba(98, 116, 224, 0.3);
+    border-radius: 0 30px 30px 0;
+}
+
+#sidebar a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: 0.3s;
+}
+
+#sidebar a:hover {
+    transform: scale(1.3);
+}
+
+
+/* ===== INTRO (hero) ===== */
+
+#intro {
+    min-height: 80vh;
+    padding: 40px 8%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 30px;
+}
+
+#intro-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+#intro h1 {
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    font-weight: 700;
+}
+
+#intro-text p {
+    font-size: 1.3rem;
+    color: #c5ccf0;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+/* Both buttons share the same pill shape */
+#hire-me,
+#CV {
+    padding: 12px 32px;
+    border: none;
+    border-radius: 25px;
+    color: #ffffff;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+#hire-me {
+    background: #2A3B80;
+}
+
+#CV {
+    background: linear-gradient(90deg, #6274E0, #4255B2);
+}
+
+#hire-me:hover,
+#CV:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(98, 116, 224, 0.6);
+}
+
+
+/* ===== ORBS (the glowing spheres, made with CSS only) ===== */
+
+.orbs {
+    position: relative;
+    height: 420px;
+}
+
+.orb {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #ffffff 0%, #b8c2ff 25%, #6274E0 60%, #2A3B80 100%);
+    box-shadow: 0 0 60px rgba(98, 116, 224, 0.5);
+}
+
+.orb-big {
+    width: 230px;
+    height: 230px;
+    right: 15%;
+    bottom: 10%;
+}
+
+.orb-small {
+    width: 90px;
+    height: 90px;
+    left: 15%;
+    top: 20%;
+}
+
+/* the thin glowing ring around the big orb */
+.ring {
+    position: absolute;
+    width: 380px;
+    height: 150px;
+    right: 5%;
+    bottom: 18%;
+    border: 2px solid #6274E0;
+    border-radius: 50%;
+    transform: rotate(-15deg);
+    box-shadow: 0 0 15px rgba(98, 116, 224, 0.5);
+}
+
+
+/* ===== ABOUT ===== */
+
+#About {
+    padding: 80px 8%;
+    max-width: 850px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.1rem;
+    color: #c5ccf0;
+}
+
+
+/* ===== SKILLS ===== */
+
+#skills {
+    padding: 80px 8%;
+    background: #121F50;
+}
+
+#skills > h1,
+#projects h1 {
+    margin-bottom: 35px;
+    font-size: 2.2rem;
+    text-align: center;
+}
+
+#skills > div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+/* Cards: see-through white, so the navy shows behind them */
+#skills > div > div {
+    padding: 35px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid #2A3B80;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+#skills > div > div:hover {
+    transform: translateY(-6px);
+    border-color: #6274E0;
+    box-shadow: 0 0 25px rgba(98, 116, 224, 0.35);
+}
+
+#skills h1 {
+    margin-bottom: 15px;
+    color: #6274E0;
+    font-size: 1.5rem;
+}
+
+#skills p {
+    color: #c5ccf0;
+}
+
+
+/* ===== SPECIAL SKILLS ===== */
+
+#skillspec {
+    padding: 60px 8%;
+}
+
+#skillspec > div:first-child {
+    margin-bottom: 25px;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+#skillspec > div:last-child {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+#skillspec > div:last-child > div {
+    padding: 12px 28px;
+    border: 1px solid #6274E0;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+#skillspec > div:last-child > div:hover {
+    background: linear-gradient(90deg, #6274E0, #4255B2);
+    border-color: transparent;
+}
+
+
+/* ===== PROJECTS ===== */
+
+#projects {
+    padding: 80px 8%;
+    background: #121F50;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+#projects h1 {
+    grid-column: 1 / -1;
+}
+
+#projects > div {
+    min-height: 220px;
+    padding: 30px;
+    display: flex;
+    align-items: flex-end;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid #2A3B80;
+    border-radius: 20px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+#projects > div:hover {
+    transform: translateY(-5px);
+    border-color: #6274E0;
+    box-shadow: 0 0 25px rgba(98, 116, 224, 0.35);
+}
+
+
+/* ===== HIRE ME ===== */
+
+#hire {
+    padding: 80px 8%;
+    text-align: center;
+}
+
+#hire p {
+    margin-bottom: 25px;
+    font-size: 2.2rem;
+    font-weight: bold;
+}
+
+#hire button {
+    padding: 14px 32px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(90deg, #6274E0, #4255B2);
+    color: #ffffff;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+#hire button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(98, 116, 224, 0.6);
+}
+
+ #anim{
+    font-size: 2rem;
+    font-weight: bold;
+    border-right: 3px solid #6274ED;
+    display: inline-block;
+    padding-right: 5px;
+ }
+
+@media (max-width: 768px) {
+    #nav,
+    #intro,
+    #skills,
+    #skillspec,
+    #projects,
+    #hire {
+        padding: 50px 5%;
+    }
+
+    #nav ul {
+        gap: 20px;
+    }
+
+    #sidebar {
+        display: none;
+    }
+
+    #intro {
+        grid-template-columns: 1fr;
+    }
+
+    .orbs {
+        height: 320px;
+    }
+
+    #skills > div,
+    #projects {
+        grid-template-columns: 1fr;
+    }
+
+    #hire p {
+        font-size: 1.8rem;
+    }
+}
+
+#image img {
+    display: block;
+    width: 100%;
+    max-height: 450px;
+    object-fit: contain;
+}
