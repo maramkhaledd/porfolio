@@ -20,8 +20,7 @@
                    <a href="#About">About me</a>
                 </li>
                 <li>
-                    
-                  
+                    <a href="#hire">Contact</a>
                 </li>
                 <li>
                     <a href="#skills">Skills</a>
@@ -41,7 +40,7 @@
             <!-- <h1>Hello! I'm Maram Khaled</h1> -->
             <p>Graphic designer and web developer</p>
             <div class="buttons">
-                <button id="hire-me">Hire me</button>
+                <a href="#hire"><button id="hire-me">Hire me</button></a>
                 <a href="Maram_Khaled_Fresh graduate from Arab Academy for Science and Maritime_resume.pdf" download>
                   <button id="CV">Download CV</button>  
                 </a>
@@ -56,7 +55,10 @@
     </div>
 
     <div id="About">
-        <p>Graphic designer and self-taught digital artist with internship experience creating social media content and 
+        <div class="about-photo">
+            <img src="me.JPG" alt="Portrait of Maram Khaled">
+        </div>
+        <p>Graphic designer and self-taught digital artist with internship experience creating social media content and
 logos for brands and organizations. As well as experience in web development and programming </p>
     </div>
 
@@ -95,24 +97,37 @@ visual concepts for social media posts, branding, and promotional materials.</p>
 
     <div id="projects">
         <h1>My projects</h1>
-        <div>
-           Andalosia Full stack project (Learning platform)
+        <div class="project-card">
+            <img src="andalosia.png" alt="Screenshot of the Andalosia learning platform">
+            <div class="project-info">
+                <h2>Andalosia</h2>
+                <p>Full stack learning platform. Built to help learners look for courses that they need and for instructors to keep track of learners participating in the courses. Built using React for front end and .NET + SQL database for the backend</p>
+                <a href="https://github.com/MariamAlaaFathy/andalusia-fullstack-project">Github repo</a>
+            </div>
         </div>
-        <div>
-            Nexify (HTML, CSS, & javascript project)
+        <div class="project-card">
+            <img src="nexify.png" alt="Screenshot of the Nexify website">
+            <div class="project-info">
+                <h2>Nexify</h2>
+                <p>Front-end project built with HTML, CSS, and JavaScript.</p>
+                <a href="https://github.com/maramkhaledd/sphinx-assignment">Github repo</a>
+            </div>
         </div>
     </div>
 
    <div id="hire">
     <p>Contact</p>
-   <a
-        href="https://mail.google.com/mail/?view=cm&fs=1&to=maramkhaledx@gmail.com&su=Job%20Opportunity"
-        id="hire-me"
-        target="_blank"
-    >
-        Send me an email
-    </a>
+    <form id="contact-form">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+
+        <button type="submit">Send message</button>
+    </form>
 </div>
+
 
     <script src="code.js"></script>
 </body>
